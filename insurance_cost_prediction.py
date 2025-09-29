@@ -78,9 +78,10 @@ with tab2:
 with tab3:
     st.write("Medical Charges by Smoker and Region")
     fig, ax = plt.subplots(1, 2, figsize=(12, 5))
-    sns.boxplot(x="smoker", y="charges", data=df, ax=ax[0], palette="Set2")
+    sns.boxplot(x="smoker", y="charges", data=df, ax=ax[0], hue="smoker", legend=False)
     ax[0].set_title("Smoker vs Charges")
-    sns.boxplot(x="region", y="charges", data=df, ax=ax[1], palette="Set3")
+    #sns.boxplot(x="region", y="charges", data=df, ax=ax[1], palette="Set3")
+    sns.boxplot(x="region", y="charges", data=df, ax=ax[1], hue="region", legend=False)
     ax[1].set_title("Region vs Charges")
     st.pyplot(fig)
 
